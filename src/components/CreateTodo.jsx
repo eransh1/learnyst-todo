@@ -10,8 +10,7 @@ const CreateTodo = ({flipCard=()=>{},showButton=false}) => {
     const dispatch = useDispatch()
     const formRef = useRef();
     const editedTodo=useSelector((state)=>state.editedTodo)
-    console.log("editedTodo",editedTodo)
-
+   
 useEffect(()=>{
   if(editedTodo){
     formRef.current.elements.title.value=editedTodo.title
