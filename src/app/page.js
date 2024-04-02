@@ -7,13 +7,22 @@ import ShowTodos from "@/components/ShowTodos";
 import { throttle } from "lodash";
 import { useState } from "react";
 
+function getInnerWidth(){
+  if (typeof window !== 'undefined'){
+    return window.innerWidth
+  }
+
+}
 
 export default function Home() {
-  const [width, setWidth] = useState(window.innerWidth);
+  const innerWidth=getInnerWidth()
+  const [width, setWidth] = useState(innerWidth);
 
   const updateWidth = throttle(() => {
-    setWidth(window.innerWidth);
-  },900)
+    if (typeof window !== 'undefined'){
+      setWidth(window.innerWidth);
+    }
+  },500)
   
    
 

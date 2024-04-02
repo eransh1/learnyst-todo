@@ -17,7 +17,10 @@ class ErrorBoundary extends React.Component {
                 "Failed to fetch dynamically imported module"
             )
         ) {
-            window.location.reload();
+            if (typeof window !== 'undefined') {
+                window.location.reload();
+            }
+            
         }
     }
 

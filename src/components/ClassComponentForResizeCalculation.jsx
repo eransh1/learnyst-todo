@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 
 class ClassComponentForResizeCalculation extends Component {
   componentDidMount() {
-    window.addEventListener("resize", this.props.updateWidth);
+    if (typeof window !== 'undefined') {
+      window.addEventListener("resize", this.props.updateWidth);
+    }
+    
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.props.updateWidth);
+    if (typeof window !== 'undefined') {
+
+      window.removeEventListener("resize", this.props.updateWidth);
+    }
   }
 
   render() {

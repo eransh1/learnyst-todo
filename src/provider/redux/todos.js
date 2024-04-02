@@ -1,9 +1,15 @@
 
+'use client'
 
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 
-let initialState=localStorage.getItem('todos')?JSON.parse(localStorage.getItem('todos')):[]
+let initialState=[]
 
+if (typeof window !== 'undefined') {
+    if(localStorage.getItem('todos')){
+        initialState=JSON.parse(localStorage.getItem('todos'))
+    }    
+  }
 function makeItLocallyAvailable(data){
 localStorage.setItem('todos',JSON.stringify(data))
 }
