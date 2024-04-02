@@ -1,0 +1,92 @@
+.outerContainer{
+    width: 90%;
+    height: 90vh;
+}
+
+.cancelBtn{
+    color:#090A0B;
+    border-radius: 9px;
+    width: max-content;
+    font-weight: 500;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: underline;
+}
+
+
+.cancelBtn:hover .lessThanCont{
+    animation: moveback 400ms ease forwards;
+    will-change: transform;
+}
+@keyframes moveback {
+    0% { transform: translateX(0) ; }
+    20% { transform: translateX(-10px) ; }
+    40% { transform: translateX(-8px) ; }
+    60% { transform: translateX(-12px) ; }
+    80% { transform: translateX(-10px) ; }
+    100% { transform: translateX(-10px) ; }
+  }
+  @keyframes moveitFront {
+    0% { transform: translateX(-10px)  }
+    50% { transform: translateX(5px)  }
+    80% { transform: translateX(-3px)  }
+    100% { transform: translateX(0px)  }
+   
+  }
+
+.lessThanCont{
+    display: flex;
+    align-items: center;
+    margin-right: .5rem;
+    font-size: 1rem;
+    animation: moveitFront 300ms ease forwards; 
+  /* will-change: transform; */
+  transition: all 300ms ease;
+
+ 
+}
+
+.saveBtn{
+    color:#090A0B;
+    border-radius: 9px;
+    width: max-content;
+    font-weight: 500;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: underline;
+}
+
+.saveBtn:hover .greaterThanCont{
+    animation: moveit 400ms ease forwards;
+    will-change: transform;
+}
+@keyframes moveit {
+    0% { transform: translateX(0) ; }
+    20% { transform: translateX(10px) ; }
+    40% { transform: translateX(8px) ; }
+    60% { transform: translateX(12px) ; }
+    80% { transform: translateX(10px) ; }
+    100% { transform: translateX(10px) ; }
+  }
+  @keyframes moveitback {
+    0% { transform: translateX(10px)  }
+    50% { transform: translateX(-5px)  }
+    80% { transform: translateX(3px)  }
+    100% { transform: translateX(0px)  }
+   
+  }
+
+.greaterThanCont{
+    display: flex;
+    align-items: center;
+    margin-left: .5rem;
+    font-size: 1rem;
+    animation: moveitback 300ms ease forwards; 
+  /* will-change: transform; */
+  transition: all 300ms ease;
+ 
+}
